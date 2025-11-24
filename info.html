@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Info Kas Masjid Al-Hidayah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #f4f6f9;
+    }
+
+    header {
+      background: #005766;
+      color: #fff;
+      padding: 12px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    header h1 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    header span {
+      font-size: .8rem;
+      opacity: .9;
+    }
+
+    .sheet-wrapper {
+      padding: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: calc(100vh - 70px); /* penuh layar, dikurangi tinggi header */
+      border: none;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Info Kas Masjid Al-Hidayah</h1>
+    <span>Data otomatis dari Google Spreadsheet (read-only)</span>
+  </header>
+
+  <div class="sheet-wrapper">
+    <iframe 
+      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2ZMijPhNfpjSl9aywRfM0ESr1I7GWl4L69_k5H2wW_RD9ZdO-lBT4HsX5lJ3t5aPk94cHHxQ4SNK8/pubhtml?widget=true&amp;headers=false">
+    </iframe>
+  </div>
+
+</body>
+</html>
