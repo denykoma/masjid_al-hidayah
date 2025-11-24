@@ -99,7 +99,7 @@ https://templatemo.com/tm-536-dream-pulse
 
   <!-- Link ke web pencari sumber shahih (contoh: islamqa) -->
   <li class="nav-item">
-    <a href="https://islamqa.info/id" class="nav-link" target="_blank" rel="noopener">
+    <a href="https://yufid.com/" class="nav-link" target="_blank" rel="noopener">
       <span class="d-inline-block mr-3">WEB Pencari Sumber Shahih</span>
       <span class="d-inline-block tm-white-rect"></span>
     </a>
@@ -289,13 +289,36 @@ pihak, baik dari pemerintah, donatur, maupun masyarakat sekitar.
         </main>        
       </div>
     </div>
-    <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.min.js"></script>
     <script src="js/jquery.singlePageNav.min.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="slick/slick.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/templatemo-scripts.js"></script>
-  </body>
 
+    <!-- Paksa menu ke halaman lain / link eksternal -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var links = document.querySelectorAll('#tmMainNav a');
+
+        links.forEach(function (a) {
+          var href = a.getAttribute('href');
+          // Kalau bukan anchor (#...), berarti link biasa → paksa jalan
+          if (href && !href.startsWith('#')) {
+            a.addEventListener('click', function (e) {
+              // Biar script singlePageNav nggak nahan
+              e.stopPropagation();
+              // Kalau ada target="_blank", buka tab baru
+              if (a.target === '_blank') {
+                window.open(href, '_blank');
+              } else {
+                window.location.href = href;
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
 
